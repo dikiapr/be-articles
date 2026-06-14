@@ -1,0 +1,35 @@
+@ArtikelKu.Api_HostAddress = http://localhost:5072
+@Token = tempel-token-dari-response-login
+
+GET {{ArtikelKu.Api_HostAddress}}/api/articles
+Accept: application/json
+
+###
+
+POST {{ArtikelKu.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@artikelku.com",
+  "password": "admin123"
+}
+
+###
+
+GET {{ArtikelKu.Api_HostAddress}}/api/auth/me
+Authorization: Bearer {{Token}}
+Accept: application/json
+
+###
+
+POST {{ArtikelKu.Api_HostAddress}}/api/articles
+Authorization: Bearer {{Token}}
+Content-Type: application/json
+
+{
+  "title": "Artikel Baru",
+  "summary": "Ringkasan artikel baru",
+  "content": "Isi lengkap artikel baru"
+}
+
+###
