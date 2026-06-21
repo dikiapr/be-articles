@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/diki/explore-react/ArtikelKu.Api/ArtikelKu.Api.csproj": {}
+    "/Users/diki/belajar/project-awal-formula/be-articles/ArtikelKu.Api.csproj": {}
   },
   "projects": {
-    "/Users/diki/explore-react/ArtikelKu.Api/ArtikelKu.Api.csproj": {
+    "/Users/diki/belajar/project-awal-formula/be-articles/ArtikelKu.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/diki/explore-react/ArtikelKu.Api/ArtikelKu.Api.csproj",
+        "projectUniqueName": "/Users/diki/belajar/project-awal-formula/be-articles/ArtikelKu.Api.csproj",
         "projectName": "ArtikelKu.Api",
-        "projectPath": "/Users/diki/explore-react/ArtikelKu.Api/ArtikelKu.Api.csproj",
+        "projectPath": "/Users/diki/belajar/project-awal-formula/be-articles/ArtikelKu.Api.csproj",
         "packagesPath": "/Users/diki/.nuget/packages/",
-        "outputPath": "/Users/diki/explore-react/ArtikelKu.Api/obj/",
+        "outputPath": "/Users/diki/belajar/project-awal-formula/be-articles/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/diki/.nuget/NuGet/NuGet.Config"
