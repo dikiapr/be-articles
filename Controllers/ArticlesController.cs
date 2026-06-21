@@ -1,16 +1,18 @@
 using System.Security.Claims;
 using ArtikelKu.Api.Data;
 using ArtikelKu.Api.Dtos;
+using ArtikelKu.Api.Hubs;
 using ArtikelKu.Api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace ArtikelKu.Api.Controllers;
 
 [ApiController]
 [Route("api/articles")]
-public class ArticlesController(AppDbContext db) : ControllerBase
+public class ArticlesController(AppDbContext db, IHubContext<ArticleHub> hub) : ControllerBase
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<ArticleDto>>> GetAll()
@@ -63,6 +65,9 @@ public class ArticlesController(AppDbContext db) : ControllerBase
         await db.SaveChangesAsync();
 
         var articleDto = ToDto(article);
+
+        await hub.Clients.All.SendAsync("ArticleCreated", articleDto);
+
         return CreatedAtAction(nameof(GetById), new { id = article.Id }, articleDto);
     }
 
